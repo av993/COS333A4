@@ -2,54 +2,44 @@
 <html>
 
 <head>
-   <title>Registrar's Office Class Search</title>
+   <link rel="stylesheet" href=
+   "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+   
+   <title>Registrar's Office: Class Search</title>
+      
+
 </head>
 
 <body>
-   {% include 'header.html' %}
    {% if err_message != '': %}
    {{err_message}}
    {% else: %}
-   <h2>Class Search</h2>
-   <hr>
+
+   <div class="container-fluid"
+         style="background-color:#295078; color:white">
+         <center>
+            <h1 class="d-none d-sm-block">Registrar's Office: Class Search</h2>
+         </center>
+
    <form action="/" method="get">
-      <table>
-         <tr>
-            <td align="right">
-               Dept:
-            </td>
-            <td>
-               <input id="deptInput" type="text" name="dept" value = ""><br>
-            </td>
-         </tr>
-         <tr>
-            <td align="right">
-               Number:
-            </td>
-            <td>
-               <input id="numInput" type="text" name="number" value = ""><br>
-            </td>
-         </tr>
-         <tr>
-            <td align="right">
-               Area:
-            </td>
-            <td>
-               <input id="areaInput" type="text" name="area" value = ""><br>
-            </td>
-         </tr>
-         <tr>
-            <td align="right">
-               Title:
-            </td>
-            <td>
-               <input id="titleInput" type="text" name="title" value = ""><br>
-            </td>
-         </tr>
-      </table>
+      <div class="row">
+         <div class="col-sm padding-0">
+            <input id="deptInput" class="form-control" type="text" name="dept" value = "" placeholder="Department"><br>
+         </div>
+         <div class="col-sm padding-0">
+            <input id="numInput" type="text" name="number" value = "" class="form-control" placeholder="Number"><br>
+         </div>
+         <div class="col-sm padding-0">
+            <input id="areaInput" type="text" name="area" value = "" class="form-control" placeholder="Area"><br>
+         </div>
+         <div class="col-sm padding-0">
+            <input id="titleInput" type="text" name="title" value = "" class="form-control" placeholder="Title"><br>
+         </div>
+      </div>
    </form>
-   <hr>
-   <table id = "coursesTable"></table>
+   </div>
+   <table id = "coursesTable" class = "table table-striped"></table>
+
    {% endif %}
    {% include 'footer.html' %}
 </body>
