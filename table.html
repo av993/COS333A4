@@ -1,13 +1,13 @@
 <tbody>
-    <tr>
-        <td><b>ClassId</b></td>
-        <td><b>Dept</b></td>
-        <td><b>Num</b></td>
-        <td><b>Area</b></td>
-        <td><b>Title</b></td>
-    </tr>
-    {% for course in courses: %}
     <center>
+        <tr>
+            <td><b>ClassId</b></td>
+            <td><b>Dept</b></td>
+            <td><b>Num</b></td>
+            <td><b>Area</b></td>
+            <td><b>Title</b></td>
+        </tr>
+        {% for course in courses: %}
         <tr>
             <td><a href="/regdetails?classid={{course.get_id()}}" target="_blank">{{course.get_id()}}</a></td>
             <td>{{course.get_dept()}}</td>
@@ -15,6 +15,6 @@
             <td>{{course.get_area()}}</td>
             <td>{{course.get_title()}}</td>
         </tr>
+        {% endfor %}
     </center>
-    {% endfor %}
 </tbody>
