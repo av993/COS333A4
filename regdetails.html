@@ -18,7 +18,6 @@
         {{err_message}}
         {% else: %}
         <h2>Class Details (class id {{classid}})</h2>
-        <br>
         <b>Course Id: </b>{{classes[1]}}<br>
         <b>Days: </b>{{classes[2]}}<br>
         <b>Start time: </b>{{classes[3]}}<br>
@@ -27,7 +26,6 @@
         <b>Room: </b>{{classes[6]}}<br>
         <hr>
         <h2>Course Details (course id {{classes[1]}})</h2>
-        <br>
 
         {% for value in depts: %}
         <b>Dept and Number: </b>{{value[1]}} {{value[2]}}<br>
