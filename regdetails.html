@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registrar's Office Class Search</title>
+</head>
+
+<body>
+    {% include 'header.html' %}
+    {% if err_message != '': %}
+    {{err_message}}
+    {% else: %}
+    <hr>
+    <h2>Class Details (class id {{classid}})</h2>
+    <br>    
+    <b>Course Id: </b>{{classes[1]}}<br>
+    <b>Days: </b>{{classes[2]}}<br>
+    <b>Start time: </b>{{classes[3]}}<br>
+    <b>End time: </b>{{classes[4]}}<br>
+    <b>Building: </b>{{classes[5]}}<br>
+    <b>Room: </b>{{classes[6]}}<br>
+    <hr>
+    <h2>Course Details (course id {{classes[1]}})</h2>
+    <br>
+
+    {% for value in depts: %}
+    <b>Dept and Number: </b>{{value[1]}} {{value[2]}}<br>
+    {% endfor %}
+    <b>Area: </b>{{courses[1]}}<br>
+    <b>Title: </b>{{courses[2]}}<br>
+    <b>Description: </b>{{courses[3]}}<br>
+    <b>Prerequisites: </b>{{courses[4]}}<br>
+    {% for value in profs: %}
+    <b>Professor: </b>{{value}}<br>
+    {% endfor %}
+    <hr>
+    <br>
+    Click here to do <a href="/?dept={{prev_dept}}&number={{prev_num}}&area={{prev_area}}&title={{prev_title}}">another class search</a>
+    <br>
+    <br>
+    {% endif %}
+    {% include 'footer.html' %}
+</body>
+
+</html>

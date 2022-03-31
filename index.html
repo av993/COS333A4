@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Registrar's Office Class Search</title>
+</head>
+
+<body>
+   {% include 'header.html' %}
+   {% if err_message != '': %}
+   {{err_message}}
+   {% else: %}
+   <h2>Class Search</h2>
+   <hr>
+   <form action="/" method="get">
+      <table>
+         <tr>
+            <td align="right">
+               Dept:
+            </td>
+            <td>
+               <input id="deptInput" type="text" name="dept" value = ""><br>
+            </td>
+         </tr>
+         <tr>
+            <td align="right">
+               Number:
+            </td>
+            <td>
+               <input id="numInput" type="text" name="number" value = ""><br>
+            </td>
+         </tr>
+         <tr>
+            <td align="right">
+               Area:
+            </td>
+            <td>
+               <input id="areaInput" type="text" name="area" value = ""><br>
+            </td>
+         </tr>
+         <tr>
+            <td align="right">
+               Title:
+            </td>
+            <td>
+               <input id="titleInput" type="text" name="title" value = ""><br>
+            </td>
+         </tr>
+      </table>
+   </form>
+   <hr>
+   <table id = "coursesTable"></table>
+   {% endif %}
+   {% include 'footer.html' %}
+</body>
+
+
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+      </script>
+
+      <!-- <script src="static/jquery.min.js"></script> -->
+
+      <script>
+
+         'use strict';
+
+
+         function handleResponse(response)
+         {
+            $('#coursesTable').html(response);
+            
+         }
+
+         let request = null;
+
+         function getResults()
+         {
+            let dept = $('#deptInput').val();
+            dept = encodeURIComponent(dept);
+            let num = $('#numInput').val();
+            num = encodeURIComponent(num);
+            let area = $('#areaInput').val();
+            area = encodeURIComponent(area);
+            let title = $('#titleInput').val();
+            title = encodeURIComponent(title);
+
+            let url = '/searchresults?dept=' + dept + '&num=' + num + '&area=' + area + '&title=' + title 
+
+            if (request != null)
+               request.abort();
+
+            request = $.ajax(
+               {
+                  type: 'GET',
+                  url: url,
+                  success: handleResponse
+               }
+            );
+         }
+
+         function setup()
+         {
+            getResults()
+            $('#deptInput').on('input', getResults);
+            $('#numInput').on('input', getResults);
+            $('#areaInput').on('input', getResults);
+            $('#titleInput').on('input', getResults);
+
+         }
+
+         $('document').ready(setup);
+
+      </script>
+
+
+</html>
