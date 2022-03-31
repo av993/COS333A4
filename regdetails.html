@@ -7,6 +7,11 @@
 </head>
 
 <body>
+
+
+    {% if err_message != '': %}
+    {{err_message}}
+    {% else: %}
     <div class="container-fluid" style="background-color:#295078; color:white">
         <center>
             <h1 class="d-none d-sm-block">Registrar's Office: Class Details</h1>
@@ -14,9 +19,6 @@
     </div>
 
     <div class="container-fluid">
-        {% if err_message != '': %}
-        {{err_message}}
-        {% else: %}
         <h2>Class Details (class id {{classid}})</h2>
         <b>Course Id: </b>{{classes[1]}}<br>
         <b>Days: </b>{{classes[2]}}<br>
@@ -37,13 +39,13 @@
         {% for value in profs: %}
         <b>Professor: </b>{{value}}<br>
         {% endfor %}
-        <hr>
         <br>
         <br>
-        <br>
-        {% endif %}
-        {% include 'footer.html' %}
+
     </div>
+    {% endif %}
+
+    {% include 'footer.html' %}
 </body>
 
 </html>
