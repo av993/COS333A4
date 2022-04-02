@@ -35,18 +35,19 @@ def search_form():
     if title is None:
         title = ""
 
-    query = Query(True, dept, num, area, title)
+    query = Query(True, query=(dept, num, area, title))
     error, courses = database.handle_all_courses(query)
 
     if error != "":
         html = render_template('error.html',
-                           error=error)
+                               error=error)
     else:
         html = render_template('table.html',
-                           courses=courses)
+                               courses=courses)
 
     response = make_response(html)
     return response
+
 
 @app.route('/regdetails', methods=['GET'])
 def search_results():
