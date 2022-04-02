@@ -4,12 +4,7 @@ Ameya Vaidya, Brian Lou
 Assignment 4
 
 Ameya's Contribution:
-I worked on adding to the HTML files and including
-the Jinga2 template engine into the HTML markup
-language. I also worked on adding all the error handling
-features including changing the database.py and the registrar.py
-file to accept and return errors. I also worked on writing 
-the code to make the cookies work.
+I worked on writing the AJAX and javascript code to make sure that the table is filtered when people type into the text boxes. In addition, I also created the table.html and error.html file and worked on updating registrar.py with the updated routes. I did some initial formatting for the main page but Brian finished up the formatting that I started using Bootstrap, CSS, and HTML.
 
 Brian's Contribution:
 I implemented the Boostrap rescaling and formatting for regdetails.html.

@@ -4,7 +4,19 @@
 			"path": "."
 		},
 		{
-			"path": "../../PennyFlaskJinja"
+			"path": "../PennyBootstrap"
+		},
+		{
+			"path": "../PennyJQuery"
+		},
+		{
+			"path": "../PennyAjax"
+		},
+		{
+			"path": "../PennyJavaScript"
+		},
+		{
+			"path": "../COS333A3"
 		}
 	],
 	"settings": {}
