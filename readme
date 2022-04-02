@@ -1,7 +1,7 @@
 avaidya_blou
 
 Ameya Vaidya, Brian Lou 
-Assignment 3
+Assignment 4
 
 Ameya's Contribution:
 I worked on adding to the HTML files and including
@@ -12,9 +12,11 @@ file to accept and return errors. I also worked on writing
 the code to make the cookies work.
 
 Brian's Contribution:
-I wrote most of the .py files such as registrar.py and 
-database.py. I also worked on setting up the basic HTML files
-and functions (without cookies or error handling).
+I implemented the Boostrap rescaling and formatting for regdetails.html.
+I added rescaling to index.html. Additionally, I also 
+changed the error messages and error handling for
+both index.html and regdetails.html. Finally, I prettified the py
+code to remove pylint warnings.
 
 Help Recieved From Other People:
 None
@@ -23,7 +25,7 @@ Sources Used:
 COS333 Lecture Notes and Code from Lectures
 
 Time Spent on Assignment:
-7 Hours
+3 Hours
 
 Assessment of Assignment:
 It was a great assignment and helped us learn the pipeline between HTML
